@@ -1,10 +1,10 @@
 <?php
 
 /*
-necoPHPdb専用の管理パネルです。テスト用なので雑です。
+necoPhpDb専用の管理パネルです。テスト用なので雑です。
 本体と同ディレクトリに設置してください。
 
-This is a dedicated administration panel for necoPHPdb.
+This is a dedicated administration panel for necoPhpDb.
 It is for testing purposes only.
 Please put it in the same directory as the main file.
 */
