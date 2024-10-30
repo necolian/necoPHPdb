@@ -18,7 +18,7 @@ if ($action === 'add') {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $db->add($dbFileName, ['name' => $name, 'mailAddress' => $email]);
-        header('Location: index.php');
+        header('Location: panel.php');
         exit;
     }
 }
@@ -26,7 +26,7 @@ if ($action === 'add') {
 if ($action === 'delete' && isset($_GET['index'])) {
     $index = intval($_GET['index']);
     $db->delete($dbFileName, $index);
-    header('Location: index.php');
+    header('Location: panel.php');
     exit;
 }
 
@@ -35,19 +35,19 @@ if ($action === 'update' && isset($_POST['index'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $db->update($dbFileName, $index, ['name' => $name, 'mailAddress' => $email]);
-    header('Location: index.php');
+    header('Location: panel.php');
     exit;
 }
 
 if ($action === 'clear') {
     $db->clear($dbFileName);
-    header('Location: index.php');
+    header('Location: panel.php');
     exit;
 }
 
 if ($action === 'deleteDb') {
     $db->deleteDb($dbFileName);
-    header('Location: index.php');
+    header('Location: panel.php');
     exit;
 }
 
@@ -57,7 +57,7 @@ if ($action === 'insert') {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $db->insert($dbFileName, $index, ['name' => $name, 'mailAddress' => $email]);
-        header('Location: index.php');
+        header('Location: panel.php');
         exit;
     }
 }
