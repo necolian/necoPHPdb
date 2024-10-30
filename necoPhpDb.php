@@ -1,5 +1,10 @@
 <?php
 
+/*
+メインファイルです。
+It's a main file of necoPHPdb.
+*/
+
 class NecoPhpDb {
     private $directory;
 
