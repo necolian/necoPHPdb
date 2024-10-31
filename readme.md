@@ -1,6 +1,6 @@
 # necoPhpDb
 
-Japanese version: [readme-ja.md](readme-ja.md)
+日本語版: [readme-ja.md](readme-ja.md)
 
 necoPhpDb is a PHP class for manipulating simple JSON-based databases. Using this library, you can easily perform create, read, update, and delete (CRUD) operations on data. Additionally, a management panel is also provided.
 
