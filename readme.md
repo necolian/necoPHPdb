@@ -1,87 +1,86 @@
-﻿
 # necoPhpDb
 
-日本語版:[readme-ja.md](readme-ja.md)
+Japanese version: [readme-ja.md](readme-ja.md)
 
-`necoPhpDb` is a PHP class for manipulating simple JSON-based databases. Using this library, you can easily perform create, read, update, and delete (CRUD) operations on data. panel is for administration. Miscellaneous.
+necoPhpDb is a PHP class for manipulating simple JSON-based databases. Using this library, you can easily perform create, read, update, and delete (CRUD) operations on data. Additionally, a management panel is also provided.
 
-## Calls
+## Installation
 
-1. download or copy `necoPhpDb.php` to your project.
-2. require `necoPhpDb.php` in the PHP file where you want to use the `NecoPhpDb` class.
+1. Download or copy `necoPhpDb.php` to your project.
+2. Include `necoPhpDb.php` in the PHP file where you want to use the `NecoPhpDb` class.
 
     ```php
-    require 'necoPhpDb.php'; 
+    require 'necoPhpDb.php';
     ```
 
-## Class structure
+## Class Structure
 
-The `NecoPhpDb` class provides the following methods.
+The `necoPhpDb` class provides the following methods.
 
-### Methods.
+### Methods
 
-- **``__construct($directory)``**
-    - Create an instance of `NecoPhpDb` specifying the directory where the database will be stored.
+- **`__construct($directory)`**
+    - Creates an instance of `necoPhpDb`, specifying the directory where the database will be stored.
 
-- **``create($filename, $keys)``**
-    - create a new database file.
-    - **Arguments**:.
-        - `$filename`: database filename (no extension required)
-        - `$keys`: array of column names.
+- **`create($filename, $keys)`**
+    - Creates a new database file.
+    - **Arguments**:
+        - `$filename`: The database filename (no extension required).
+        - `$keys`: An array of column names.
 
-- **`add($filename, $data)``**
-    - add($filename, $data)`** adds the given data to the database.
-    - **arguments**:.
-        - `$filename`: database filename.
-        - `$data`: an associative array of data.
+- **`add($filename, $data)`**
+    - Adds the specified data to the database.
+    - **Arguments**:
+        - `$filename`: The database filename.
+        - `$data`: An associative array of data to add.
 
-- **``getAll($filename)``**
-    - Get all data from the database and return it as an array.
-    - **Arguments**:.
-        - `$filename`: database filename
-    - **Return value**: an associative array containing all data.
+- **`getAll($filename)`**
+    - Retrieves all data from the database and returns it as an array.
+    - **Arguments**:
+        - `$filename`: The database filename.
+    - **Return value**: An associative array containing all data.
 
 - **`update($filename, $index, $data)`**
-    - update($filename, $index, $data)`** updates the data at the given index.
-    - **Arguments**:.
-        - `$filename`: database filename.
-        - `$index`: Index of the data to be updated.
-        - `$data`: an associative array of the new data.
+    - Updates the data at the specified index.
+    - **Arguments**:
+        - `$filename`: The database filename.
+        - `$index`: The index of the data to be updated.
+        - `$data`: An associative array of the new data.
 
 - **`delete($filename, $index)`**
-    - Deletes data at the specified index.
-    - **Arguments**:.
-        - `$filename`: database filename.
-        - `$index`: index of data to delete.
+    - Deletes the data at the specified index.
+    - **Arguments**:
+        - `$filename`: The database filename.
+        - `$index`: The index of data to delete.
 
 - **`insert($filename, $index, $data)`**
-    - inserts new data at the specified index.
-    - **Arguments**:.
-        - `$filename`: database filename.
-        - `$index`: index to insert.
-        - `$data`: an associative array of data to insert.
+    - Inserts new data at the specified index.
+    - **Arguments**:
+        - `$filename`: The database filename.
+        - `$index`: The index to insert the data.
+        - `$data`: An associative array of data to insert.
 
 - **`clear($filename)`**
-    - remove all data in the database (keys will remain).
-    - **Arguments**:.
-        - `$filename`: the database filename.
+    - Removes all data from the database (but keeps the keys).
+    - **Arguments**:
+        - `$filename`: The database filename.
 
 - **`deleteDb($filename)`**
-    - completely deletes the database file.
-    - **Arguments**: ``$filename``: database filename
-        - `$filename`: database filename
+    - Completely deletes the database file.
+    - **Arguments**:
+        - `$filename`: The database filename.
 
-## Example usage
+## Example Usage
 
-The following code snippet shows the basic usage of `NecoPhpDb`.
+The following code snippet demonstrates the basic usage of `necoPhpDb`.
 
 ```php
-require 'NecoPhpDb.php';
+require 'necoPhpDb.php';
 
 // Create an instance of the database
 $db = new NecoPhpDb('database');
 
-// Create database
+// Create a new database
 $keys = ['name', 'mailAddress'];
 $db->create('example', $keys);
 
@@ -97,23 +96,20 @@ $db->update('example', 0, ['name' => 'Jiro Suzuki', 'mailAddress' => 'suzuki@exa
 // Delete data
 $db->delete('example', 0);
 
-// delete all data
+// Clear all data
 $db->clear('example');
 
-// Delete database
+// Delete the database
 $db->deleteDb('example');
 ```
 
 ## Notes
 
-- **Directory Permissions**: You must have write permission to the directory containing the database.
-- **Error Handling**: This library provides basic functionality, but it is recommended that the error handling process be implemented by the user.
-- **Security**: When used in a production environment, input validation and sanitization should be performed.
-
-
-**Security**: If used in a production environment, input validation and sanitization should be done on the user side.
+- **Directory Permissions**: You must have write permissions for the directory containing the database.
+- **Error Handling**: This library provides basic functionality, but it is recommended that users implement their own error handling.
+- **Security**: When used in a production environment, user input validation and sanitization should be performed.
 
 ------------------------------------
-Copyright (c) 2024 necolian
-Released under the MIT license
+Copyright (c) 2024 necolian  
+Released under the MIT license  
 [https://opensource.org/licenses/mit-license.php](https://opensource.org/licenses/mit-license.php)
